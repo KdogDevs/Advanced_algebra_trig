@@ -5,6 +5,12 @@ on:
     tags:
       - 'v*'
 
+# Add explicit permissions block to fix the access issue
+permissions:
+  contents: write
+  issues: read
+  pull-requests: read
+
 jobs:
   build:
     name: Create Release
@@ -12,10 +18,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Create Release Package
         run: |
-          mkdir release
+          mkdir -p release
           cp *.8xp release/
           cp README.md release/
           zip -r TI84_Trig_Suite_${{ github.ref_name }}.zip release/
