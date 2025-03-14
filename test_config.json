@@ -1,0 +1,32 @@
+{
+  "rom": "{{ROM_PATH}}",
+  "transfer_files": [
+    "TRIGMAIN.8xp",
+    "TRIGCONF.8xp",
+    "TRIGSRT.8xp",
+    "TRIGUNIT.8xp",
+    "TRIGRTS.8xp",
+    "TRIGFUNC.8xp",
+    "TRIGAPPL.8xp",
+    "TRIGNOTE.8xp"
+  ],
+  "target": {
+    "type": "program",
+    "name": "TRIGMAIN"
+  },
+  "sequence": [
+    {"action": "delay", "time": 500},
+    {"action": "key", "key": "clear"},
+    {"action": "key", "key": "prgm"},
+    {"action": "delay", "time": 200},
+    {"action": "key", "key": "enter"},
+    {"action": "delay", "time": 1000},
+    {"action": "screenshot", "path": "test_results/main_menu.png"},
+    {"action": "key", "key": "1"},
+    {"action": "delay", "time": 500},
+    {"action": "screenshot", "path": "test_results/special_triangles.png"},
+    {"action": "key", "key": "3"},
+    {"action": "delay", "time": 300},
+    {"action": "screenshot", "path": "test_results/back_to_main.png"}
+  ]
+}

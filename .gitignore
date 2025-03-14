@@ -1,0 +1,29 @@
+# Build and test output directories
+test_output/
+test_results/
+release/
+
+# Calculator ROM file (copyrighted)
+*.rom
+TI84PLUSCE.rom
+
+# Temporary files
+*.tmp
+*.bak
+*~
+
+# CEmu (should be handled as a submodule or separate dependency)
+CEmu/
+
+# Environment-specific settings
+.env
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# ZIP files (releases)
+*.zip
+
+# Keep the demo screenshot
+!screenshots/demo.png
